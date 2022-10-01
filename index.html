@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,9 +10,26 @@
 </head>
 <div id="weatherAppContainer">
     <div id="locationInputContainer">
-        <label for="locationInput">Enter a Location</label>
         <input type="text" name="locationInput" id="locationInput" placeholder="Cincinnati, Ohio, USA">
+        <button>Submit</button>
+    </div>
+    <div id="weatherInformationContainer">
+        <img src="#" alt="img" id="weatherImg">
+        <div id="degreeDisplayContainer">
+            <div id="degreeNumber">30</div>
+            <div id="degreeTypeContainer">
+                <div id="celsius">°C</div>
+                <div id="split">|</div>
+                <div id="fahrenheit">°F</div>
+            </div>
+        </div>
+        <div id="additionalWeatherInformationContainer">
+            <div id="precipitation">Precipitation: 0%</div>
+            <div id="humidity">Humidity: 0%</div>
+            <div id="wind">Wind: 0km/h</div>
+        </div>
     </div>
 </div>
 <script src="main.js"></script>
+
 </html>
