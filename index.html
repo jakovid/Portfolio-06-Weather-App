@@ -10,8 +10,10 @@
 </head>
 <div id="weatherAppContainer">
     <div id="locationInputContainer">
-        <input type="text" name="locationInput" id="locationInput" placeholder="Cincinnati, Ohio, USA">
-        <button>Submit</button>
+        <input type="text" name="cityLocationInput" id="cityLocationInput" placeholder="Cincinnati">
+        <input type="text" name="stateLocationInput" id="stateLocationInput" placeholder="OH">
+        <input type="text" name="countryLocationInput" id="countryLocationInput" placeholder="US">
+        <button onclick="getLongitudeLatitude()">Submit</button>
     </div>
     <div id="weatherInformationContainer">
         <img src="#" alt="img" id="weatherImg">
@@ -27,6 +29,11 @@
             <div id="precipitation">Precipitation: 0%</div>
             <div id="humidity">Humidity: 0%</div>
             <div id="wind">Wind: 0km/h</div>
+        </div>
+        <div id="locationInformationContainer">
+            <div id="locationName"></div>
+            <div id="locationDayTime"></div>
+            <div id="locationWeatherType"></div>
         </div>
     </div>
 </div>
