@@ -41,3 +41,7 @@
 #locationInformationContainer { 
     text-align: right;
 }
+
+#celsius:hover, #fahrenheit {
+    cursor: pointer;
+}

@@ -87,5 +87,7 @@ async function getWeatherInformation() {
     locationWeatherType = weatherData.weather[0].main;
 }
 
+
+
 addEventListeners();
 displayWeatherInformation();
