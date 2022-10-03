@@ -26,13 +26,13 @@ function populateLocationInformation() {
 
 async function getWeatherImg() {
     img.src = '#';
-    const response = await fetch(`https://api.giphy.com/v1/gifs/translate?api_key=${giphyID}&s=${weatherImgType}`, { mode: 'cors' })
+    const response = await fetch(`https://api.giphy.com/v1/gifs/translate?api_key=kvwilimQvZM1Dlh0EkhG1ZiEEEn9zkii&s=${weatherImgType}`, { mode: 'cors' })
     const weatherImgData = await response.json();
     img.src = weatherImgData.data.images.original.url;
 }
 
 async function getLongitudeLatitude() {
-    const response = await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${city},${state},${country}&limit=1&appid=${weatherID}`);
+    const response = await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${city},${state},${country}&limit=1&appid=5dd670ae6c88bc100c0dc5e21791aef5`);
     const locationWeatherData = await response.json();
     latitude = locationWeatherData[0].lat;
     longitude = locationWeatherData[0].lon;
@@ -41,7 +41,7 @@ async function getLongitudeLatitude() {
 }
 
 async function getWeatherInformation() {
-    const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${weatherID}`);
+    const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=5dd670ae6c88bc100c0dc5e21791aef5`);
     const weatherData = await response.json();
     console.log(weatherData);
 }
