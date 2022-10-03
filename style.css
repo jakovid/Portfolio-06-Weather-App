@@ -1,7 +1,7 @@
 #weatherInformationContainer {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    width: 30rem;
+    width: 35rem;
     text-align: center;
     align-items: center;
     background-color: slategray;
