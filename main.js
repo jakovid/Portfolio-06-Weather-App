@@ -13,8 +13,14 @@ let latitude = 39.1014537;
 let unitType = 'metric';
 
 function addEventListeners() {
+    let submitCityButton = document.getElementById('submitCityButton');
     let celciusButton = document.getElementById('celsius');
     let fahrenheitButton = document.getElementById('fahrenheit');
+
+    submitCityButton.addEventListener('click', e => {
+        changeCity(document.getElementById('cityLocationInput').value);
+        displayWeatherInformation();
+    })
 
     celciusButton.addEventListener('click', e => {
         changeUnitType('metric');
@@ -29,6 +35,10 @@ function addEventListeners() {
 
 function changeUnitType(selectedUnitType) {
     unitType = selectedUnitType;
+}
+
+function changeCity(cityName) {
+    city = cityName;
 }
 
 async function displayWeatherInformation() {    
@@ -48,15 +58,14 @@ async function populateLocationInformation() {
     let locationDayTimeBox = document.getElementById('locationDayTime');
     let locationWeatherTypeBox = document.getElementById('locationWeatherType');
 
-    temperatureDisplay.innerHTML = temperature;
+    temperatureDisplay.innerHTML = Math.round(temperature);
     precipitationDisplay.innerHTML = precipitation;
     humidityDisplay.innerHTML = humidity;
     windDisplay.innerHTML = wind;
-    locationNameBox.innerHTML = city + ', ' + state + ', ' + country;
+    locationNameBox.innerHTML = city;
     locationDayTimeBox.innerHTML = locationDayTime;
     locationWeatherTypeBox.innerHTML = locationWeatherType;
     console.log(temperatureDisplay);
-    console.log('hahhhh');
     
 }
 
@@ -68,7 +77,7 @@ async function getWeatherImg() {
 }
 
 async function getLongitudeLatitude() {
-    const response = await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${city},${state},${country}&limit=1&appid=5dd670ae6c88bc100c0dc5e21791aef5`);
+    const response = await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=5dd670ae6c88bc100c0dc5e21791aef5`);
     const locationWeatherData = await response.json();
     latitude = locationWeatherData[0].lat;
     longitude = locationWeatherData[0].lon;
